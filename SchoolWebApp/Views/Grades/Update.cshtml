@@ -1,0 +1,25 @@
+﻿@using SchoolWebApp.DTO;
+@model GradeDTO;
+<div>
+    <form asp-action="Update" method="post">
+        <h4>Edit a grade</h4>
+        <div class="form-group">
+            <label class="control-label" asp-for="StudentId"></label>
+            <select class="form-control" asp-for="StudentId" asp-items="ViewBag.Students"></select>
+
+            <label class="control-label" asp-for="SubjectId"></label>
+            <select class="form-control" asp-for="SubjectId" asp-items=" ViewBag.Subjects"></select>
+
+
+            <label asp-for="Topic"></label>
+            <input type="text" asp-for="Topic" placeholder="What was examined" class="form-control" />
+
+
+            <label asp-for="Mark"></label>
+            <input type="number" asp-for="Mark" min="1" max="5" placeholder="Mark" class="form-control" />
+        </div>
+        <div>
+            <input class="btn btn-success" type="submit" value="Update" />
+        </div>
+    </form>
+</div>

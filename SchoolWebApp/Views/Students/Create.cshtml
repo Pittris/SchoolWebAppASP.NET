@@ -1,0 +1,15 @@
+﻿@using SchoolWebApp.DTO
+@model StudentDTO
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="FirstName"></label>
+        <input type="text" asp-for="FirstName" class="form-control"/>
+
+        <label asp-for="LastName"></label>
+        <input type="text" asp-for="LastName" class="form-control" />
+
+        <label asp-for="DateOfBirth"></label>
+        <input type="date" asp-for="DateOfBirth" class="form-control" />
+    </div>
+    <input type="submit" class="btn btn-success" value="Create"/>
+</form>

@@ -1,0 +1,32 @@
+﻿@using SchoolWebApp.DTO
+@using SchoolWebApp.ViewModels
+@model IEnumerable<GradesViewModel>
+<h1>List of all grades</h1>
+<div>
+    <a class="btn btn-info" asp-controller="Grades" asp-action="Create">
+        Add a
+        new grade
+    </a>
+</div>
+<hr />
+@foreach (var item in Model) {
+    <div class="border border-1 border-dark">
+        <p>@item.StudentName </p>
+        <p>
+            @item.SubjectName @item.Topic - @item.Mark <br>
+            @item.Date.ToShortDateString()
+        </p>
+        <a class="btn btn-warning" asp-controller="Grades" asp-action="Update"
+           asp-route-id="@item.Id">Edit</a>
+        <form method="post">
+            <button type="submit" class="btn btn-danger" asp-controller="Grades" asp-action="Delete"
+               asp-route-id="@item.Id">Delete</button>
+        </form>
+        
+    </div>
+}
+<hr />
+
+
+
+

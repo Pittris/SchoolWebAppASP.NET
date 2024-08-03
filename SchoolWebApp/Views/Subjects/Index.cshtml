@@ -1,0 +1,14 @@
+﻿@using SchoolWebApp.DTO
+@model IEnumerable<SubjectDTO>
+<h1>List of subjects</h1>
+<a class="btn btn-info my-2" asp-action="Create">Create</a>
+@foreach (var subject in Model) {
+    <div class="border border-dark my-1">
+        <h5>  @subject.Name </h5>
+        <p>@subject.Id</p>
+        <a class="btn btn-warning" asp-action="Update" asp-route-id="@subject.Id">Edit</a>
+        <form method="post">
+            <button type="submit" class="btn btn-danger my-1" asp-action="Delete" asp-route-id="@subject.Id">Delete</button>
+        </form>
+    </div>
+}
